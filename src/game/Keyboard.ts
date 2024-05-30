@@ -5,13 +5,14 @@ let x:   number = 0, y:  number = 0;
 let x2:  number = 0, y2: number = 0;
 let keysPressed: {
     [ key: number ]: boolean 
-};
+} = {};
 
-window.addEventListener('keydown', function(event) {
+// Event listeners for keydown and keyup events
+document.addEventListener('keydown', (event) => {
     keysPressed[event.keyCode] = true;
 });
 
-window.addEventListener('keyup', function(event) {
+document.addEventListener('keyup', (event) => {
     keysPressed[event.keyCode] = false;
 });
 
@@ -23,16 +24,16 @@ export function moveBall( ball: string, stage: string): void{
     const limitBall:  ClientRect  | DOMRect = $ball!.getBoundingClientRect();
     const limitStage: ClientRect  | DOMRect = $stage!.getBoundingClientRect(); 
 
-    if (keysPressed[65] && limitBall.left > limitStage.left) {
+    if ((keysPressed[65] ?? false) && limitBall.left > limitStage.left) {
         x--;
     }
-    if (keysPressed[68] && limitBall.right < limitStage.right) {
+    if ((keysPressed[68] ?? false) && limitBall.right < limitStage.right) {
         x++;
     }
-    if (keysPressed[87] && limitBall.top > limitStage.top) {
+    if ((keysPressed[87] ?? false) && limitBall.top > limitStage.top) {
         y--;
     }
-    if (keysPressed[83] && limitBall.bottom < limitStage.bottom) {
+    if ((keysPressed[83] ?? false )&& limitBall.bottom < limitStage.bottom) {
         y++;
     }
     
