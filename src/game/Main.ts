@@ -1,6 +1,6 @@
 import { checkGameStatus } from './GameLogic';
 import { Fighter }         from './Character';
-import { startAudio }      from '../utils/AudioReproducer';
+// import { startAudio }      from '../utils/AudioReproducer';
 import { 
     updateBorderColor, 
     addAndRemoveClass, 
@@ -31,7 +31,7 @@ const CHARACTER_HEALTH_ID = 'characterHealth';
 
 
 // Reproducir música
-startAudio(audio, audioStarted);
+// startAudio(audio, audioStarted);
 
 // Mover los personajes y atacar
 const game = () => {
