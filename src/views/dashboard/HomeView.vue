@@ -1,13 +1,12 @@
 
 <script setup lang="ts">
-import Navbar from '@/components/shared/Navbar.vue';
-
+import Game from '../../components/Game.vue'
 
 </script>
 
 <template>
     <main>
-        <Navbar />
+        <Game />
     </main>
 </template>
 

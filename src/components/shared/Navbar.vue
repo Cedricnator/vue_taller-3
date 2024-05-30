@@ -1,9 +1,13 @@
 <script setup lang="ts">
 
+defineProps<{
+    nameUser: string
+}>()
+
 </script>
 
 <template>
-    <div class="navbar bg-base-100">
+    <div class="navbar bg-base-100 w-full">
         <div class="navbar-start">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -15,32 +19,47 @@
                 </div>
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Home</a></li>
                     <li>
-                        <a>Parent</a>
+                        <RouterLink to="/">
+                        Home
+                        </RouterLink>
+                    </li>
+                    <li>
+                        <div>Menu</div>
                         <ul class="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
+                            <li>
+                                <RouterLink to="/dashboard">
+                                    Dashboard
+                                </RouterLink>
+                            </li>
+                            <li>
+                                <RouterLink to="/dashboard/wiki">
+                                    Wiki
+                                </RouterLink>
+                            </li>
                         </ul>
                     </li>
-                    <li><a>Wiki</a></li>
                 </ul>
             </div>
-            <a class="btn btn-ghost text-xl">Nombre Usuario</a>
+            <a class="btn btn-ghost text-xl">{{nameUser}}</a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
-                <li><a>Home</a></li>
-                <!-- <li>
-                    <details>
-                        <summary>Parent</summary>
-                        <ul class="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
-                        </ul>
-                    </details>
-                </li> -->
-                <li><a>Wiki</a></li>
+                <li>
+                    <RouterLink to="/">
+                        Home
+                    </RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/dashboard">
+                        Dashboard
+                    </RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/dashboard/wiki">
+                        Wiki
+                    </RouterLink>
+                </li>
             </ul>
         </div>
         <div class="navbar-end">
@@ -52,10 +71,10 @@
                 </div>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                   <li>
-                    <a class="justify-between">
+                    <!-- <a class="justify-between">
                       Profile
                       <span class="badge">New</span>
-                    </a>
+                    </a> -->
                   </li>
                   <li><a>Settings</a></li>
                   <li><a>Logout</a></li>
