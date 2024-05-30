@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DashboardView from '../views/dashboard/HomeView.vue'
 import WikiView from '@/views/dashboard/WikiView.vue'
+// import { useUserStore } from '@/stores/user'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,7 +15,11 @@ const router = createRouter({
     {
       path: '/auth/login',
       name: 'login',
-      component: () => import('../views/auth/LoginView.vue')
+      component: () => import('../views/auth/LoginView.vue'),
+      // meta: {
+      //   layout: 'auth',
+      //   requireAuth: false
+      // }
     },
     {
       path: '/dashboard',
@@ -30,12 +35,19 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
     }
   ]
 })
+
+// router.beforeEach((to, from, next) => {
+//   // const userStore = useUserStore();
+//   // const isAuth = userStore.isAuthenticated;
+//   // if(to.meta.requireAuth && !isAuth ){
+//   //   next({ name: '/auth/login' });
+//   // } else {
+    
+//   // }
+// })
 
 export default router

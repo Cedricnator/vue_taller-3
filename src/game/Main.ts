@@ -15,7 +15,7 @@ import {
 // Inicialización de los personajes y variables
 const character   = new Fighter({ name: "fighter", life: 300});
 const nemesis     = new Fighter({ name: "nemesis", life: 300});
-const audio       = new Audio('../public/Audio.mp3');
+const audio       = new Audio('/Audio.mp3');
 audio.loop        = true;
 let audioStarted  = false;
 
