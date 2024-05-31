@@ -7,5 +7,6 @@ export const useStore = defineStore('store', {
   }),
   persist: {
     storage: localStorage,
+    paths: ['characterState'],
   },
 })

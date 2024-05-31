@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DashboardView from '../views/dashboard/HomeView.vue'
 import WikiView from '@/views/dashboard/WikiView.vue'
+import RecordsView from '@/views/dashboard/RecordsView.vue'
 // import { useUserStore } from '@/stores/user'
 
 const router = createRouter({
@@ -34,7 +35,7 @@ const router = createRouter({
     {
       path:      '/dashboard/records',
       name:      'records',
-      component: () => import('../views/dashboard/RecordsView.vue')
+      component:  RecordsView
     },
     
     {

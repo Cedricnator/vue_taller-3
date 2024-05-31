@@ -1,8 +1,11 @@
 <script setup lang="ts">
 
-defineProps<{
-    nameUser: string
-}>()
+const props = withDefaults(defineProps<{
+    nameUser?: string
+    imgUser?:  string
+}>(), {
+    nameUser: 'Invitado',
+});
 
 </script>
 
@@ -66,7 +69,16 @@ defineProps<{
             <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                   <div class="w-10 rounded-full">
-                    <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    <img
+                        v-if="imgUser" 
+                        alt="Tailwind CSS Navbar component" 
+                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" 
+                    />
+                    <div v-else class="avatar online placeholder w-full h-full">
+                        <div class="bg-neutral text-neutral-content rounded-full w-16">
+                            <span class="text-xl">IN</span>
+                        </div>
+                    </div>
                   </div>
                 </div>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
