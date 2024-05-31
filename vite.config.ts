@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base: 'https://cedricnator.github.io/vue_taller-3',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
