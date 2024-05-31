@@ -1,12 +1,20 @@
 <script setup lang="ts">
+import { useUserStore } from '@/stores/user';
+import { nextTick, ref, watchEffect, type Ref } from 'vue';
 
-const props = withDefaults(defineProps<{
-    nameUser?: string
-    imgUser?:  string
-}>(), {
-    nameUser: 'Invitado',
+
+let nameUser: Ref<string> = ref('Invitado');
+let imgUser: string | undefined = undefined;
+const userStore = useUserStore();
+
+watchEffect(() => {
+    if(userStore.isAuthenticated) {
+        const isUserAuthenticated = userStore.getUserAuthenticated();
+        nameUser.value = isUserAuthenticated?.name ?? 'Invitado';
+    } else {
+        nameUser.value = 'Invitado';
+    }
 });
-
 </script>
 
 <template>
