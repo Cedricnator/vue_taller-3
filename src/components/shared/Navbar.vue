@@ -29,7 +29,7 @@ defineProps<{
                         <ul class="p-2">
                             <li>
                                 <RouterLink to="/dashboard">
-                                    Dashboard
+                                    Game
                                 </RouterLink>
                             </li>
                             <li>
@@ -46,18 +46,18 @@ defineProps<{
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
                 <li>
-                    <RouterLink to="/">
-                        Home
+                    <RouterLink to="/dashboard/wiki">
+                        Wiki
                     </RouterLink>
                 </li>
                 <li>
                     <RouterLink to="/dashboard">
-                        Dashboard
+                        Game
                     </RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/dashboard/wiki">
-                        Wiki
+                    <RouterLink to="/dashboard/records">
+                        Records
                     </RouterLink>
                 </li>
             </ul>

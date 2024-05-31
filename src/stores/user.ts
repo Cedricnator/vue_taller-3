@@ -4,6 +4,7 @@ import type { User }   from '@/types';
 import { defineStore } from 'pinia'
 
 export const useUserStore = defineStore('user', () => {
+
   let isAuthenticated: boolean = false;
   let isLoading:       boolean = false;
 
@@ -30,6 +31,7 @@ export const useUserStore = defineStore('user', () => {
     isAuthenticated = false;
   }
 
+   
   return {
     // Properties 
     isAuthenticated, 

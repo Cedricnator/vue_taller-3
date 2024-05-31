@@ -55,7 +55,7 @@ nav {
     display: flex;
     min-height: 50vh;
     border: 1rem solid #222;
-    background-image: url("../public/images/area.jpg");
+    background-image: url("/images/area.jpg");
 }
 
 
