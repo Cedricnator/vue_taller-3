@@ -4,9 +4,22 @@ import { useUserStore } from '../../stores/user';
 import { useRouter } from 'vue-router';
 const router    = useRouter();
 const userStore = useUserStore();
-const email     = ref<String>('');
-const password  = ref<String>('');
+const email     = ref('');
+const password  = ref('');
 
+const loginUser = () => {
+    try {
+        const haveAccount = userStore.login(email.value, password.value);
+        if( haveAccount ){
+            console.log('User found')
+            router.push('/dashboard');
+        } else {
+            console.log('User not found');
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
 </script>
 
 <template>
@@ -18,10 +31,13 @@ const password  = ref<String>('');
                 <path
                     d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
             </svg>
-            <input 
+            <input
+                id="Email" 
                 type="text" 
+                aria-label="email-input"
                 class="grow" 
-                placeholder="Email" 
+                placeholder="Email"
+                v-model="email" 
             />
         </label>
         <label class="input input-bordered flex items-center gap-4">
@@ -31,12 +47,20 @@ const password  = ref<String>('');
                     clip-rule="evenodd" />
             </svg>
             <input 
+                id="Password"
                 type="password" 
                 class="grow" 
+                aria-label="password-input"
                 placeholder="password" 
+                v-model="password"
             />
         </label>
-
-        <button class="btn btn-primary mt-5 w-full">Login</button>
+        <button 
+            class="btn btn-primary mt-5 w-full"
+            type="submit"
+            @click.prevent="loginUser"
+            >
+            Login
+        </button>
     </form>
 </template>

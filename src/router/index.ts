@@ -8,13 +8,13 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path:      '/',
+      name:      'home',
       component: HomeView
     },
     {
-      path: '/auth/login',
-      name: 'login',
+      path:      '/auth/login',
+      name:      'login',
       component: () => import('../views/auth/LoginView.vue'),
       // meta: {
       //   layout: 'auth',
@@ -22,19 +22,24 @@ const router = createRouter({
       // }
     },
     {
-      path: '/dashboard',
-      name: 'dashboard',
+      path:     '/dashboard',
+      name:     'dashboard',
       component: DashboardView
     },
     {
-      path: '/dashboard/wiki',
-      name: 'wiki',
+      path:     '/dashboard/wiki',
+      name:     'wiki',
       component: WikiView
+    },
+    {
+      path:      '/dashboard/records',
+      name:      'records',
+      component: () => import('../views/dashboard/RecordsView.vue')
     },
     
     {
-      path: '/about',
-      name: 'About',
+      path:      '/about',
+      name:      'About',
       component: () => import('../views/AboutView.vue')
     }
   ]

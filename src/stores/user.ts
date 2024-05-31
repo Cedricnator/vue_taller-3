@@ -8,10 +8,11 @@ export const useUserStore = defineStore('user', () => {
   let isAuthenticated: boolean = false;
   let isLoading:       boolean = false;
 
-  const login = (name: string, password: string): User => {
+  const login = (email: string, password: string): User => {
     isLoading = true;
     for (const user of Users) {
-      if (user.name === name && user.password === password) {
+      if (user.email === email && user.password === password) {
+        console.log({'User found:': user})
         user.authenticated = true
         isAuthenticated = true;
         isLoading = false;
@@ -20,6 +21,8 @@ export const useUserStore = defineStore('user', () => {
     }
     isAuthenticated = false;
     isLoading = false;
+    console.log({'User not found the email and password is': email, password})
+    console.log({'Users are': Users})
     throw new Error('User not found');
   }
 
