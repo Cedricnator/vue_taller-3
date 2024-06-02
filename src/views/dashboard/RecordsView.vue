@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import '../../game/Record';
+import { Fighter } from '@/game/Character';
+
 
 </script>
 
@@ -7,12 +10,12 @@
         <h1 class="mt-10 text-xl text-center font-semibold">
             Records Page
         </h1>
-        <div>
-            <div>
-                <ul>
-                    <li>Hola</li>
-                    <li>Adios</li>
-                </ul>
+        <div class="container">
+            <div class="records">
+                <h3>Record Personaje 1</h3>
+                <div>{{  }}</div>
+
+                <h3>Record Personaje 2</h3>
             </div>
         </div>
     </div>
