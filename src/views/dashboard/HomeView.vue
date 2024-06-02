@@ -6,7 +6,7 @@ import Game from '../../components/Game.vue'
 
 <template>
     <main>
-        <Game />
+        <Game/>
     </main>
 </template>
 

@@ -34,7 +34,7 @@ const CHARACTER_HEALTH_ID = 'characterHealth';
 // startAudio(audio, audioStarted);
 
 // Mover los personajes y atacar
-const game = () => {
+  const game = () => {
   let gameOver = false;
 
 
