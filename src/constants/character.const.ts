@@ -7,7 +7,7 @@ export const Character: CharacterType[] = [
         description: 'The main character of the Dragon Ball series', 
         life: 100, 
         damage: 10, 
-        image: 'goku.jpg' 
+        image: '/vue_taller-3/images/sprite1.png' 
     },
     { 
         id: 2,
@@ -15,7 +15,7 @@ export const Character: CharacterType[] = [
         description: 'The prince of the Saiyans', 
         life: 80, 
         damage: 15, 
-        image: 'vegeta.jpg' 
+        image: '/vue_taller-3/images/sprite2.png' 
     },
     {
         id: 3,
@@ -23,7 +23,7 @@ export const Character: CharacterType[] = [
         description: 'The Namekian warrior',
         life: 70,
         damage: 20,
-        image: 'piccolo.jpg'
+        image: '/vue_taller-3/images/sprite3.jpg'
     },
     {
         id: 4,
@@ -31,6 +31,6 @@ export const Character: CharacterType[] = [
         description: 'The first son of Goku',
         life: 60,
         damage: 25,
-        image: 'gohan.jpg'
+        image: '/vue_taller-3/images/sprite4.png'
     }
 ]

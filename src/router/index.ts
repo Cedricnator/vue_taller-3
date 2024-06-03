@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import DashboardView from '../views/dashboard/HomeView.vue'
-import WikiView from '@/views/dashboard/WikiView.vue'
-import RecordsView from '@/views/dashboard/RecordsView.vue'
-import { useUserStore } from '@/stores/user'
-// import { useUserStore } from '@/stores/user'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import DashboardView from '../views/dashboard/HomeView.vue';
+import WikiView from '@/views/dashboard/WikiView.vue';
+import RecordsView from '@/views/dashboard/RecordsView.vue';
+import { useUserStore } from '@/stores/user';
+import SelectorView from '@/views/dashboard/SelectorView.vue';
 
 const router = createRouter({
   history: createWebHistory('#'),
@@ -46,7 +46,14 @@ const router = createRouter({
         requireAuth: false
       }
     },
-    
+    {
+      path:      '/dashboard/selector',
+      name:      'selector',
+      component:  SelectorView,
+      meta: {
+        requireAuth: false
+      }
+    },
     {
       path:      '/about',
       name:      'About',

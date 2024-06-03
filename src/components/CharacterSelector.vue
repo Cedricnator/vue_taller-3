@@ -1,25 +1,14 @@
 <script setup lang="ts">
-
+import CharacterList from '@/components/CharacterList.vue';
 </script>
 
 <template>
-    <h1>Personajes</h1>
-    <section class="grid grid-cols-3 gap-4">
-        <div class="card">
-            <h2>Personaje 1</h2>
-            <p>Descripción del personaje 1</p>
-            <button>Seleccionar</button>
-        </div>
-        <div class="card">
-            <h2>Personaje 2</h2>
-            <p>Descripción del personaje 2</p>
-            <button>Seleccionar</button>
-        </div>
-        <div class="card">
-            <h2>Personaje 3</h2>
-            <p>Descripción del personaje 3</p>
-            <button>Seleccionar</button>
-        </div>
+    <h1 class="text-xl text-center font-semibold mb-3 mt-3">Personajes</h1>
+
+    <section 
+        class="grid grid-cols-4 h-[300px] w-[1200px] px-16 mx-auto overflow-y-auto overflow-x-auto"
+    >
+        <CharacterList />
     </section>
 
 </template>
