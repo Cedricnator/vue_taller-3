@@ -5,13 +5,14 @@ import { ref } from 'vue';
 import type { CharacterType } from '../types';
 
 let selectedCharacter = ref<CharacterType | null>(null);
+const emit = defineEmits(['character-selected-by-user'])
+
 
 const handleCharacterSelected = (character: CharacterType | null) => {
-     console.log(character)
      if(character === null) return
      selectedCharacter.value = character;
+     emit('character-selected-by-user', { name: character.name, image: character.image })
 }
-
 </script>
 
 <template>
