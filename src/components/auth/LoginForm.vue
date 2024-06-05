@@ -1,21 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref }          from 'vue';
 import { useUserStore } from '../../stores/user';
-import { useRouter } from 'vue-router';
+import { useRouter }    from 'vue-router';
+
 const router    = useRouter();
 const userStore = useUserStore();
-const email     = ref('');
-const password  = ref('');
+const email     = ref( '' );
+const password  = ref( '' );
 
-const loginUser = () => {
+const loginUser = (): void => {
     try {
-        const haveAccount = userStore.login(email.value, password.value);
-        if( haveAccount ){
-            console.log('User found')
-            router.push('/dashboard');
-        } else {
-            console.log('User not found');
+        if( !userStore.login( email.value, password.value ) ){
+            console.log( "Usuario no encontrado" )
+            return;
         }
+        router.push( '/dashboard' );
     } catch (error) {
         console.error(error);
     }
