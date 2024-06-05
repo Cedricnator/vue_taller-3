@@ -22,7 +22,7 @@ const loginUser = (): void => {
 </script>
 
 <template>
-    <form class="mt-5 w-[50%] flex flex-col gap-4">
+    <form class="mt-5 w-full flex flex-col gap-8">
         <label class="input input-bordered flex items-center gap-4">
             <img 
                 src="/vue_taller-3/svg/email-icon.svg" 
@@ -52,16 +52,16 @@ const loginUser = (): void => {
                 type="password" 
                 class="grow" 
                 aria-label="password-input"
-                placeholder="password" 
+                placeholder="Password" 
                 v-model="password"
             />
         </label>
         <button 
-            class="btn btn-primary mt-5 w-full"
+            class="btn bg-yellow-400 opacity-70 mt-2 w-full text-bol text-accent-content"
             type="submit"
             @click.prevent="loginUser"
             >
-            Login
+            SIGN IN
         </button>
     </form>
 </template>

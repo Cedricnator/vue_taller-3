@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import LoginForm from "@/components/auth/LoginForm.vue";
 </script>
-
 <template>
-    <main class="">
-        <section class="flex flex-col justify-center items-center mt-32">
-            <div class="flex  flex-col justify-start">
-                <h1 class="text-start">Login Page</h1>
-                <h3>Por favor ingresa tus credenciales personales</h3>
-            </div>
-            <LoginForm />
-        </section>
+    <main class="flex flex-col justify-center items-center mt-44">
+        <div class="w-[50%] mx-auto">
+            <section class="flex flex-col">
+                <div class="text-left">
+                    <h1 class="text-3xl font-bold px-0 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-500 shadow-lg">LOGIN</h1>
+                    <h3 class="text-lg font-semibold">Por favor ingresa tus credenciales personales</h3>
+                </div>
+                <LoginForm />
+            </section>
+        </div>
     </main>    
 </template>
 
