@@ -48,7 +48,7 @@ const isHome = computed(() => route.path === '/');
                         <div>Menu</div>
                         <ul class="p-2">
                             <li>
-                                <RouterLink to="/dashboard">
+                                <RouterLink to="/dashboard/selector">
                                     Game
                                 </RouterLink>
                             </li>

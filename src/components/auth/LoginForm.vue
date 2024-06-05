@@ -14,7 +14,7 @@ const loginUser = (): void => {
             console.log( "Usuario no encontrado" )
             return;
         }
-        router.push( '/dashboard' );
+        router.push( '/dashboard/selector' );
     } catch (error) {
         console.error(error);
     }
@@ -35,7 +35,7 @@ const loginUser = (): void => {
                 type="text" 
                 aria-label="email-input"
                 class="grow" 
-                placeholder="Email"
+                placeholder="Correo Electrónico"
                 v-model="email" 
             />
         </label>
@@ -52,16 +52,17 @@ const loginUser = (): void => {
                 type="password" 
                 class="grow" 
                 aria-label="password-input"
-                placeholder="Password" 
+                placeholder="Contraseña" 
                 v-model="password"
             />
         </label>
         <button 
-            class="btn bg-yellow-400 opacity-70 mt-2 w-full text-bol text-accent-content"
+            class="btn border-orange-500 opacity-70 mt-2 w-full text-white bg-orange-500 hover:bg-orange-600"
             type="submit"
             @click.prevent="loginUser"
+            
             >
-            SIGN IN
+            INICIAR SESIÓN
         </button>
     </form>
 </template>

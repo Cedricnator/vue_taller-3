@@ -17,10 +17,9 @@
          <div 
             class="card-actions justify-between">
             <!-- <button class="btn btn-primary">Cambiar mapa</button> -->
-            <button 
-               class="btn btn-secondary w-full">
+            <RouterLink to="/dashboard" class="btn w-full border-orange-500">
                Empezar Combate
-            </button>
+            </RouterLink>
          </div>
       </div>
    </div>

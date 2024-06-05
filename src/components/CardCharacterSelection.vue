@@ -23,15 +23,26 @@ const handleSelection = () => {
 <template>
    <div class="card w-80 bg-base-100 shadow-xl image-full">
       <figure>
-         <img :src="imgCharacter || '/vue_taller-3/images/favicon.png'" alt="Shoes" />
+         <img 
+            :src="imgCharacter || '/vue_taller-3/images/favicon.png'" 
+            alt="Shoes"
+            class="h-min-[200px] h-max-[200px] transform scale-105 transition-all p-5"
+            height="150"
+            width="150" 
+         />
       </figure>
       <div class="card-body">
-      <h2 class="card-title">
-         <span v-if="nameCharacter">{{ nameCharacter }}</span>
-         <span v-else>Personaje</span>
-      </h2>
-         <div class="card-actions justify-end">
-            <button class="btn btn-primary" @click="handleSelection">SELECT</button>
+         <h2 class="card-title">
+            <span v-if="nameCharacter">{{ nameCharacter }}</span>
+            <span v-else>Personaje</span>
+         </h2>
+         <div 
+            class="card-actions justify-end">
+            <button 
+               class="btn border-orange-500" 
+               @click="handleSelection">
+               SELECT
+            </button>
          </div>
       </div>
    </div>

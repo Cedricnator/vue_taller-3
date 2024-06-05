@@ -25,7 +25,7 @@ const sendCharacter = (character: CharacterType | null, isSelected: boolean) => 
 
 <template>
    <main class="flex flex-col justify-around">
-      <h1 class="text-3xl text-center font-semibold mt-4">Selección de personajes</h1>
+      <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-500 text-center mt-4">Selección de personajes</h1>
       <section class="flex flex-row justify-around items-center px-16 mt-2">
          <CardCharacterSelection 
             :nameCharacter="selectedCharacter1 && selectedCharacter1.name  ? selectedCharacter1.name  : ''"  
@@ -40,7 +40,7 @@ const sendCharacter = (character: CharacterType | null, isSelected: boolean) => 
          />
       </section>
       <section>
-         <h1 class="text-xl text-center font-semibold mb-3 mt-28">Personajes</h1>
+         <h1 class="text-xl text-center font-bold mb-3 mt-28">PERSONAJES</h1>
          <CharacterSelector
          @character-selected-by-user="sendCharacter($event, true)"
          />

@@ -29,7 +29,7 @@ import heroImage from "/vue_taller-3/images/giphy.webp";
                 combate!
               </p>
               <RouterLink
-                to="/dashboard"
+                to="/dashboard/selector"
                 class="btn border-t-orange-600 w-[50%]"
               >
                 JUGAR
