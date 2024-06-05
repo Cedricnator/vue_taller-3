@@ -20,6 +20,7 @@ import CardMapSelection       from '@/components/CardMapSelection.vue';
          />
       </section>
       <section>
+         <h1 class="text-xl text-center font-semibold mb-3 mt-3">Personajes</h1>
          <CharacterSelector />
       </section>
    </main>
