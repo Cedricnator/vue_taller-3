@@ -5,7 +5,7 @@ import {
     updateBorderColor, 
     addAndRemoveClass, 
     updateHealth, 
-} from '../utils/InterfaceHelper';
+} from '../utils/InterfaceHelper.util';
 import { 
     attackIfClose, 
     moveBall, 

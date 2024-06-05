@@ -3,12 +3,12 @@ import {
   createWebHistory 
 } from 'vue-router';
 
-import HomeView         from '@/views/LandingPage.vue';
-import DashboardView    from '@/views/dashboard/HomeView.vue';
-import WikiView         from '@/views/dashboard/WikiView.vue';
-import RecordsView      from '@/views/dashboard/RecordsView.vue';
 import { useUserStore } from '@/stores/user';
+import DashboardView    from '@/views/dashboard/HomeView.vue';
+import HomeView         from '@/views/LandingView.vue';
+import RecordsView      from '@/views/dashboard/RecordsView.vue';
 import SelectorView     from '@/views/dashboard/SelectorView.vue';
+import WikiView         from '@/views/dashboard/WikiView.vue';
 
 const router = createRouter({
   history: createWebHistory('#'),
