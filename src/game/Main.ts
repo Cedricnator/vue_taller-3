@@ -5,7 +5,7 @@ import {
     updateBorderColor, 
     addAndRemoveClass, 
     updateHealth, 
-} from '../utils/InterfaceHelper';
+} from '../utils/InterfaceHelper.util';
 import { 
     attackIfClose, 
     moveBall, 
@@ -34,7 +34,7 @@ const CHARACTER_HEALTH_ID = 'characterHealth';
 // startAudio(audio, audioStarted);
 
 // Mover los personajes y atacar
-const game = () => {
+  const game = () => {
   let gameOver = false;
 
 

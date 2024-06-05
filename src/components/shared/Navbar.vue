@@ -1,16 +1,33 @@
 <script setup lang="ts">
+import { useUserStore } from '@/stores/user';
+import { computed, ref, watchEffect, type Ref } from 'vue';
+import { RouterLink, useRoute } from 'vue-router';
 
-const props = withDefaults(defineProps<{
-    nameUser?: string
-    imgUser?:  string
-}>(), {
-    nameUser: 'Invitado',
+
+let nameUser: Ref<string> = ref('Invitado');
+let imgUser: string | undefined = undefined;
+const userStore = useUserStore();
+
+defineProps<{
+    className?: string;
+}>();
+
+watchEffect(() => {
+    if(userStore.isAuthenticated) {
+        const isUserAuthenticated = userStore.getUserAuthenticated();
+        nameUser.value = isUserAuthenticated?.name ?? 'Invitado';
+        
+    } else {
+        nameUser.value = 'Invitado';
+    }
 });
 
+const route = useRoute();
+const isHome = computed(() => route.path === '/');
 </script>
 
 <template>
-    <div class="navbar bg-base-100 w-full">
+    <div :class="{'navbar bg-base-100 w-full': true, 'navbar w-full': isHome}">
         <div class="navbar-start">
             <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -31,7 +48,7 @@ const props = withDefaults(defineProps<{
                         <div>Menu</div>
                         <ul class="p-2">
                             <li>
-                                <RouterLink to="/dashboard">
+                                <RouterLink to="/dashboard/selector">
                                     Game
                                 </RouterLink>
                             </li>
@@ -44,7 +61,9 @@ const props = withDefaults(defineProps<{
                     </li>
                 </ul>
             </div>
-            <a class="btn btn-ghost text-xl">{{nameUser}}</a>
+            <RouterLink to="/" class="btn btn-ghost text-xl">
+                {{nameUser}}
+            </RouterLink>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
@@ -94,4 +113,4 @@ const props = withDefaults(defineProps<{
               </div>
         </div>
     </div>
-</template>
+</template>computed, import { useRoute } from 'vue-router';

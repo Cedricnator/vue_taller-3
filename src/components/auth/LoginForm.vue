@@ -1,21 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref }          from 'vue';
 import { useUserStore } from '../../stores/user';
-import { useRouter } from 'vue-router';
+import { useRouter }    from 'vue-router';
+
 const router    = useRouter();
 const userStore = useUserStore();
-const email     = ref('');
-const password  = ref('');
+const email     = ref( '' );
+const password  = ref( '' );
 
-const loginUser = () => {
+const loginUser = (): void => {
     try {
-        const haveAccount = userStore.login(email.value, password.value);
-        if( haveAccount ){
-            console.log('User found')
-            router.push('/dashboard');
-        } else {
-            console.log('User not found');
+        if( !userStore.login( email.value, password.value ) ){
+            console.log( "Usuario no encontrado" )
+            return;
         }
+        router.push( '/dashboard/selector' );
     } catch (error) {
         console.error(error);
     }
@@ -23,44 +22,47 @@ const loginUser = () => {
 </script>
 
 <template>
-    <form class="mt-5 w-[50%] flex flex-col gap-4">
+    <form class="mt-5 w-full flex flex-col gap-8">
         <label class="input input-bordered flex items-center gap-4">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
-                <path
-                    d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-                <path
-                    d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-            </svg>
+            <img 
+                src="/vue_taller-3/svg/email-icon.svg" 
+                alt=""
+                width="15"
+                height="15"
+            >
             <input
                 id="Email" 
                 type="text" 
                 aria-label="email-input"
                 class="grow" 
-                placeholder="Email"
+                placeholder="Correo Electrónico"
                 v-model="email" 
             />
         </label>
         <label class="input input-bordered flex items-center gap-4">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
-                <path fill-rule="evenodd"
-                    d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-                    clip-rule="evenodd" />
-            </svg>
+            <img 
+                src="/vue_taller-3/svg/password-icon.svg" 
+                alt="icon-password"
+                width="15"
+                height="15"
+                class=""
+            >
             <input 
                 id="Password"
                 type="password" 
                 class="grow" 
                 aria-label="password-input"
-                placeholder="password" 
+                placeholder="Contraseña" 
                 v-model="password"
             />
         </label>
         <button 
-            class="btn btn-primary mt-5 w-full"
+            class="btn border-orange-500 opacity-70 mt-2 w-full text-white bg-orange-500 hover:bg-orange-600"
             type="submit"
             @click.prevent="loginUser"
+            
             >
-            Login
+            INICIAR SESIÓN
         </button>
     </form>
 </template>
