@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import '../game/Main'
 import '../assets/styless.css'
+defineProps<{
+    nameCharacter1?: string,
+    imgCharacter1? : string,
+    nameCharacter2?: string,
+    imgCharacter2? : string,
+}>();
+
 </script>
 
 <template>
