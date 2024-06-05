@@ -5,7 +5,7 @@ import heroImage from "/vue_taller-3/images/giphy.webp";
 
 <template>
   <main>
-    <section>
+    <section class="animate__animated animate__fadeIn">
       <div
         :style="{
           backgroundImage: `url(${heroImage})`,

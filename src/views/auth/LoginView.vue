@@ -2,7 +2,7 @@
 import LoginForm  from "@/components/auth/LoginForm.vue";
 </script>
 <template>
-    <main class="flex flex-col justify-center items-center mt-44">
+    <main class="flex flex-col justify-center items-center mt-44 animate__animated animate__fadeIn">
         <div class="w-[50%] mx-auto">
             <section class="flex flex-col">
                 <div class="text-left">
