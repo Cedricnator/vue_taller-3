@@ -24,7 +24,7 @@ const sendCharacter = (character: CharacterType | null, isSelected: boolean) => 
 </script>
 
 <template>
-   <main class="flex flex-col justify-around">
+   <main class="flex flex-col justify-around animate__animated animate__fadeIn">
       <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-500 text-center mt-4">Selección de personajes</h1>
       <section class="flex flex-row justify-around items-center px-16 mt-2">
          <CardCharacterSelection 

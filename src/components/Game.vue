@@ -13,7 +13,7 @@ defineProps<{
 <template>
     <section 
         id="seccion2" 
-        class="section" 
+        class="section animate__animated animate__fadeIn" 
         data-scroll-spy
     >
         <div class="characters-info">
