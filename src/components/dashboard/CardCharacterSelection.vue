@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref }                       from 'vue';
 import { useCharacterSelectedStore } from "@/stores/characterSelection";
-import { defaultCharacter } from "@/constants/characterDefault.const";
-import type { CharacterType } from "@/types";
+import { defaultCharacter }          from "@/constants/characterDefault.const";
+import type { CharacterType }        from "@/types";
 
 const props = defineProps<{
   character?: CharacterType | null;
@@ -14,6 +14,7 @@ const emit = defineEmits(["character-selected"]);
 
 const characterSelectedStore = useCharacterSelectedStore();
 
+
 const handleSelection = () => {
   if (!selected.value) {
     let character = props.character || defaultCharacter;
@@ -23,6 +24,7 @@ const handleSelection = () => {
     select();
   }
 };
+
 
 
 const select = () => {

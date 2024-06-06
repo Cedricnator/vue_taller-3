@@ -4,7 +4,7 @@ import {
 } from 'vue-router';
 
 import { useUserStore } from '@/stores/user';
-import DashboardView    from '@/views/dashboard/HomeView.vue';
+import DashboardView    from '@/views/dashboard/GameView.vue';
 import HomeView         from '@/views/LandingView.vue';
 import RecordsView      from '@/views/dashboard/RecordsView.vue';
 import SelectorView     from '@/views/dashboard/SelectorView.vue';
