@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Navbar from "@/components/shared/Navbar.vue";
+import Navbar    from "@/components/shared/Navbar.vue";
 import heroImage from "/vue_taller-3/images/giphy.webp";
 </script>
 
@@ -8,15 +8,15 @@ import heroImage from "/vue_taller-3/images/giphy.webp";
     <section class="animate__animated animate__fadeIn">
       <div
         :style="{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage:    `url(${heroImage})`,
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
+          backgroundRepeat:   'no-repeat',
+          backgroundSize:     'cover',
         }"
       >
         <Navbar />
         <div class="hero h-screen overflow-y-hidden">
-          <div class="hero-overlay bg-opacity-60"></div>
+          <div class="hero-overlay bg-opacity-60"/>
           <div class="hero-content text-center">
             <div class="max-w-md">
               <h1

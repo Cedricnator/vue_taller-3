@@ -15,6 +15,9 @@ export const useCharacterSelectedStore = defineStore({
       },
       clearSelectedCharacters(){
          this.selectedCharacters = [];
+      },
+      getSelectedCharactersU(){
+         return this.selectedCharacters;
       }
    }
 });
