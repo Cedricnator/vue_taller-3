@@ -1,18 +1,19 @@
 import type { Fighter } from "./Character";
 
-const recordP1: number = 0;
-const recordP2: number = 0;
+let recordP1: number = 0;
+let recordP2: number = 0;
 
 
 export const recordCharacter = (gameOver: boolean, enemy: Fighter, hero: Fighter) => {
 
     if (!enemy.isAlive()) {
-        
-        return recordP2 == 1000;
+
+        localStorage.setItem("recordP2", "" + recordP2 + 1000)
 
     }else if (!hero.isAlive()) {
+
+        localStorage.setItem("recordP1", "" + recordP1 + 1000)
         
-        return recordP1 == 1000;
     }
 
     return gameOver;
