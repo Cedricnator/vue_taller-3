@@ -24,20 +24,21 @@ const handleSelection = () => {
   }
 };
 
+
 const select = () => {
   emit("character-selected", props.character);
 };
 </script>
 
 <template>
-  <div class="card w-80 bg-base-100 shadow-xl image-full">
+  <div class="card w-80 bg-base-100 shadow-xl image-full ">
     <figure>
       <img
         :src="character?.image || '/vue_taller-3/images/favicon.png'"
         alt="Shoes"
-        class="h-min-[200px] h-max-[200px] transform scale-105 transition-all p-5"
-        height="150"
-        width="150"
+        class="h-min-[117px] h-max-[117px] transform scale-105 transition-all p-6"
+        height="117"
+        width="117"
       />
     </figure>
     <div class="card-body">
@@ -47,11 +48,19 @@ const select = () => {
       </h2>
       <div class="card-actions justify-end">
         <button
-          class="btn border-orange-500 hover:text-orange-500"
-          @click="handleSelection"
-        >
-          SELECT
-        </button>
+        v-if="character"
+        class="btn border-orange-500 hover:text-orange-500"
+        @click="handleSelection"
+      >
+        SELECT
+      </button>
+      <button
+        v-else
+        class="btn border-orange-500 hover:text-orange-500"
+        disabled
+      >
+        SELECT
+      </button>
       </div>
     </div>
   </div>

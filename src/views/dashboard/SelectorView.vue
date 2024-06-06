@@ -14,11 +14,11 @@ const handleCharacterSelection = (
    character: CharacterType 
 ) => {
    if (selectingCharacter1.value) {
-      selectedCharacter1.value = character;
+      selectedCharacter1.value  = character;
       selectingCharacter1.value = false;
       selectingCharacter2.value = true; 
    } else if (selectingCharacter2.value) {
-      selectedCharacter2.value = character;
+      selectedCharacter2.value  = character;
       selectingCharacter2.value = false;
    }
 };
@@ -46,17 +46,24 @@ const sendCharacterToCardSelection = (
          Selección de personajes
       </h1>
       <section class="flex flex-row justify-around items-center px-16 mt-2">
-         <CardCharacterSelection 
-            :character="selectedCharacter1"
-            @character-selected="handleCharacterSelection"
-         />
+         <div>
+            <div class="mb-2 border border-orange-500 rounded-lg p-4 font-semibold">Jugador 1: </div>
+            <CardCharacterSelection 
+               :character="selectedCharacter1"
+               @character-selected="handleCharacterSelection"
+            />
+         </div>
 
          <CardMapSelection />
-
-         <CardCharacterSelection 
-            :character="selectedCharacter2"
-            @character-selected="handleCharacterSelection"
-         />
+         
+         <div class="">
+            <div class="mb-2 border border-orange-500 rounded-lg p-4 font-semibold">Jugador 2: </div>
+            <CardCharacterSelection 
+               :character="selectedCharacter2"
+               @character-selected="handleCharacterSelection"
+            
+            />
+         </div>
       </section>
       <section>
          <h1 class="text-xl text-center font-bold mb-3 mt-28">PERSONAJES</h1>
