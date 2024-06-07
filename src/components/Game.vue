@@ -55,7 +55,6 @@ onBeforeMount(() => {
               <div class="">{{ user?.lastname }}</div>
             </div>
             <div class="">{{ characters[0].name }}</div>
-            <div class="">{{ characters[0].life }}</div>
           </div>
           <div id="character-hp">
             <span id="character-hp-value" />
@@ -69,7 +68,6 @@ onBeforeMount(() => {
           <div class="flex flex-col text-end ">
             <div class="text-bold text-white">Desconocido</div>
             <div class="">{{ characters[1].name }}</div>
-            <div class="">{{ characters[1].life }}</div>
           </div>
           <div id="enemy-hp">
             <span id="enemy-hp-value" />
