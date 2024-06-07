@@ -3,7 +3,7 @@ import type { CharacterType } from "@/types";
 export const Character: CharacterType[] = [
     { 
         id: 1,
-        name: 'Goku', 
+        name: 'SuperWarrior', 
         description: 'The main character of the Dragon Ball series', 
         life: 100, 
         damage: 10, 
@@ -11,7 +11,7 @@ export const Character: CharacterType[] = [
     },
     { 
         id: 2,
-        name: 'Vegeta', 
+        name: 'Deimos', 
         description: 'The prince of the Saiyans', 
         life: 80, 
         damage: 15, 
@@ -19,7 +19,7 @@ export const Character: CharacterType[] = [
     },
     {
         id: 3,
-        name: 'Piccolo',
+        name: 'Ninjax',
         description: 'The Namekian warrior',
         life: 70,
         damage: 20,
@@ -27,7 +27,7 @@ export const Character: CharacterType[] = [
     },
     {
         id: 4,
-        name: 'Gohan',
+        name: 'Mercenary',
         description: 'The first son of Goku',
         life: 60,
         damage: 25,
