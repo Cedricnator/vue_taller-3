@@ -41,11 +41,10 @@ const sendCharacter = (
             width="auto" 
             height="auto"
         >
-        <div class="bg-zinc-800 opacity-100 flex justify-between px-4 py-2 rounded-lg">
-            <h4 class="text-gray-300font-semibold">
+        <div class="bg-zinc-800 opacity-100 flex justify-between px-4 py-2 rounded-lg border border-orange-800">
+            <h4 class="text-gray-100 font-bold opacity-80">
                 {{ nameCharacter }}
             </h4>
-            <!-- <p>Descripción del personaje 3</p> -->
             <button 
                 @click="sendCharacter(
                     idCharacter,
@@ -54,11 +53,10 @@ const sendCharacter = (
                     descriptionCharacter,
                     damageCharacter,
                     lifeCharacter
-                )">
+                )"
+                class="text-orange-600 hover:text-white">
                 Seleccionar
             </button> 
         </div>
     </div>
 </template>
-
-<style scoped></style>

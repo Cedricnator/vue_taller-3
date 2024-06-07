@@ -1,19 +1,34 @@
-import type { Fighter } from "./Character";
+import { Fighter } from "./Character";
+import { defineStore } from "pinia";
+type Record ={id: number, name: string, record: number, gameOver: boolean};
 
-const recordP1: number = 0;
-const recordP2: number = 0;
 
+export const records = defineStore("record", {
+    state:()=>({
+        personajes:[] as Record[],
+        id:0,
+    }),
 
-export const recordCharacter = (gameOver: boolean, enemy: Fighter, hero: Fighter) => {
+    actions:{
 
-    if (!enemy.isAlive()) {
-        
-        return recordP2 == 1000;
+    addRecord(record: number, enemy: Fighter, hero: Fighter, gameOver: boolean){
 
-    }else if (!hero.isAlive()) {
-        
-        return recordP1 == 1000;
+        if (!enemy.isAlive()) {
+            
+            const nuevoRecord = {id: this.id++, name: "Personaje 2", record: 1000, gameOver: false}
+            this.personajes.push(nuevoRecord)
+
+        } else if(!hero.isAlive()){
+
+            const nuevoRecord = {id: this.id++, name: "Personaje 1", record: 1000, gameOver: false}
+            this.personajes.push(nuevoRecord)
+
+        }
+
+        return gameOver = true;
+
     }
 
-    return gameOver;
-}
+    }
+
+})

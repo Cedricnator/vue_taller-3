@@ -1,12 +1,11 @@
 import { ref } from 'vue';
-// import { ref, computed } from 'vue'
-import { Users }       from '@/constants';
+import { Users } from '@/constants';
 import { defineStore } from 'pinia'
-
+import type { User } from '@/types'
 export const useUserStore = defineStore('user', () => {
-
   let isAuthenticated = ref(false);
-  let isLoading:       boolean = false;
+  let isLoading: boolean = false;
+  let authenticatedUser = ref<User>(); // new state property
 
   const login = (email: string, password: string): boolean => {
     isLoading = true;
@@ -15,11 +14,13 @@ export const useUserStore = defineStore('user', () => {
         console.log({'User found:': user})
         user.authenticated = true
         isAuthenticated.value = true;
+        authenticatedUser.value = user;
         isLoading = false;
         return isAuthenticated.value = true;
       }
     }
     isAuthenticated.value = false;
+    authenticatedUser.value = undefined;
     isLoading = false;
     console.log({'User not found the email and password is': email, password})
     console.log({'Users are': Users})
@@ -27,13 +28,7 @@ export const useUserStore = defineStore('user', () => {
   }
 
   const getUserAuthenticated = () => {
-    for(const user of Users){
-      if(user.authenticated){
-        return user;
-      } else {
-        return null;
-      }
-    }
+    return authenticatedUser.value; // return the authenticated user from the state
   }
 
   const logout = (id: number): void => {
@@ -42,14 +37,15 @@ export const useUserStore = defineStore('user', () => {
       user.authenticated = false
     }
     isAuthenticated.value = false;
+    authenticatedUser.value = undefined; // clear the authenticated user
   }
 
-   
   return {
     // Properties 
     isAuthenticated, 
     isLoading, 
     Users, 
+    authenticatedUser, // include the authenticated user in the store state
 
     // Methods
     login, 
@@ -58,7 +54,7 @@ export const useUserStore = defineStore('user', () => {
   }
 }, {
   persist: {
-    storage: sessionStorage,
-    paths: ['userState']
+    storage: localStorage,
+    paths: ['useUserStore', 'authenticatedUser'] // persist the authenticated user
   }
 })
