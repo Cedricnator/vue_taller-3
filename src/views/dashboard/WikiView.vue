@@ -82,6 +82,12 @@
 
         <h3>W,A,S,D: Movimientos</h3>
 
+        <h3>Ataques:</h3>
+
+        <h3>Personaje 1: X</h3>
+        
+        <h3>Personaje 2: N</h3>
+
         </div>
     </div>
 </template>
