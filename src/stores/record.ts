@@ -1,12 +1,23 @@
-import { ref, computed } from 'vue'
+import type { CharacterType } from '@/types';
 import { defineStore } from 'pinia'
 
-export const useRecordStore = defineStore('record', () => {
-  const record = ref(0)
-  const doubleRecord = computed(() => record.value * 2)
-  function increment() {
-    record.value++
-  }
-
-  return { record, doubleRecord, increment }
-})
+export const useRecordStore = defineStore({
+   id: 'main',
+   state: () => ({
+     charactersWinners: [] as CharacterType[],
+   }),
+   actions: {
+      setCharacterToRecord(characters: CharacterType[]) {
+         this.charactersWinners = characters;
+      },
+      addCharacterToRecord(character: CharacterType) {
+         this.charactersWinners.push(character);
+      },
+      clearCharactersRecord(){
+         this.charactersWinners = [];
+      },
+      getAllRecord(){
+         return this.charactersWinners;
+      }
+   }
+});
